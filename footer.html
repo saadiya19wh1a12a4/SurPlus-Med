@@ -1,0 +1,67 @@
+<style>
+    /* Footer Styles */
+    
+    body {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .content-wrapper {
+        padding-bottom: 40px;
+        /* Adjust the padding value to accommodate the reduced footer height */
+    }
+    
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        /* Adjust the padding value to reduce the footer height */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .footer-links li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    
+    .footer-links li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .social-media {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .social-media i {
+        margin-left: 10px;
+    }
+    
+    .social-media li a i {
+        width: 30px;
+        height: 30px;
+    }
+</style>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="footer-links">
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/contactus">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6 social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>

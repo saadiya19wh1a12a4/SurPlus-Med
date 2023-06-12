@@ -1,0 +1,59 @@
+{% extends 'main.html' %} {% block title %}Donor Registration{% endblock title %} {% block style %}
+<!-- <style>
+    span, label, li {
+        color : white;
+    }
+</style> -->
+{% endblock style %} {% block content %}
+<style>
+    .custom-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 30px;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-container">
+            <h5 class="text-center">Donor Registration</h5>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Username:</label>
+                    <input class="form-control" type="text" name="username" required/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password:</label>
+                    <input class="form-control" type="password" name="password" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone number:</label>
+                    <input class="form-control" type="number" name="phonenum" id="phonenum" required/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input class="form-control" type="email" name="email" required/>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const phoneNumberInput = document.getElementById('phonenum');
+
+    phoneNumberInput.addEventListener('input', function() {
+        const phoneNumber = this.value;
+        if (phoneNumber.length === 10) {
+            this.setCustomValidity('');
+        } else {
+            this.setCustomValidity('Please enter a 10-digit phone number.');
+        }
+    });
+</script>
+
+{% endblock content %}

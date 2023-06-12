@@ -1,0 +1,62 @@
+{% extends 'main.html' %} {% block title %}Upload Medicine{% endblock title %} {% block content %}
+<style>
+    .custom-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 30px;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-container">
+            <div class="container text-center mt-5">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label text-primary">Username:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="username" value="{{ username }}" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label text-primary">Name of the medicine:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label text-primary">Quantity of the medicine:</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" name="quantity" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label text-primary">Enter Image:</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control-file" name="med_image" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label text-primary">Date of expiry:</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" name="exp_date" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="showAlert()" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showAlert() {
+        alert("Successfully Uploaded Med!");
+    }
+</script>
+{% endblock content %}

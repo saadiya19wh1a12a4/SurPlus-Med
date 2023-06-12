@@ -1,0 +1,17 @@
+{% extends 'main.html' %} {% block title %}Checkout{% endblock title %} {% block content %}
+<div class='container text-center mt-5'>
+    <h5>Checkout Form</h5>
+    <form method='POST'>
+        {% csrf_token %}
+        <label>Quantity:- </label>
+        <input type='number' name='amount' />
+        <button type='submit' class="btn btn-primary" onclick="showAlert()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function showAlert() {
+        alert("Successfully Ordered!");
+    }
+</script>
+{% endblock content %}
